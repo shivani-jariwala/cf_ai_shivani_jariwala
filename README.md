@@ -2,6 +2,16 @@
 
 A production-grade clone of Cloudflare Agents demonstrating LLM integration, Workflows orchestration, Realtime voice capabilities, and RAG with memory management.
 
+## 🌐 Live Demo
+
+**Frontend**: https://ad1213b9.cf-agents-demo.pages.dev
+
+Try the live demo to experience:
+- Real-time chat with Llama 3.3 70B
+- Voice transcription and synthesis
+- Memory persistence across sessions
+- RAG-powered knowledge retrieval
+
 ## 🚀 Features
 
 - **LLM Integration**: Llama 3.3 70B Instruct on Workers AI with streaming responses
