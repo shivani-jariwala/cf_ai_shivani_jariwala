@@ -1,0 +1,13 @@
+# Copy this to .dev.vars and fill in your values
+# Get these from Cloudflare Dashboard
+
+# AI Model Configuration
+AI_MODEL_ID=@cf/meta/llama-3.3-70b-instruct-fp8-fast
+
+# Realtime Configuration
+REALTIME_APP_ID=your-realtime-app-id
+REALTIME_TOKEN=your-realtime-token
+
+# Optional: External API keys if using fallback providers
+OPENAI_API_KEY=your-openai-key
+ANTHROPIC_API_KEY=your-anthropic-key

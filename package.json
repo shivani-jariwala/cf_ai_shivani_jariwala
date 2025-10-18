@@ -1,0 +1,40 @@
+{
+  "name": "cf-agents-demo",
+  "version": "1.0.0",
+  "description": "Production-grade Cloudflare Agents clone with LLM, Workflows, and Realtime",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev:worker": "pnpm --filter worker-api dev --remote",
+    "dev:pages": "cd apps/pages-frontend && npm run dev",
+    "dev:all": "concurrently \"pnpm run dev:worker\" \"pnpm run dev:pages\"",
+    "deploy": "npm run deploy:worker && npm run deploy:pages",
+    "deploy:worker": "cd apps/worker-api && wrangler deploy",
+    "deploy:pages": "cd apps/pages-frontend && npm run build && wrangler pages deploy dist",
+    "seed": "cd apps/worker-api && node scripts/seed.js",
+    "seed:local": "node apps/worker-api/scripts/seed.js --local",
+    "seed:remote": "node apps/worker-api/scripts/seed.js --remote",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
