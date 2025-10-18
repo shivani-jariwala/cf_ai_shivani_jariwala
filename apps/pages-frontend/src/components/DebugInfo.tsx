@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export function DebugInfo() {
   const [apiStatus, setApiStatus] = useState<string>('Checking...');
@@ -6,19 +6,19 @@ export function DebugInfo() {
 
   const testAPI = async () => {
     try {
-      const response = await fetch('http://localhost:8787/health');
+      const response = await fetch('https://cf-agents-api.shivanivinodkumar-jariwala.workers.dev/health');
       const data = await response.json();
       setApiStatus('Connected ✅');
       setLastTest(data);
-    } catch (error) {
+    } catch (error: unknown) {
       setApiStatus('Failed ❌');
-      setLastTest({ error: error.message });
+      setLastTest({ error: error instanceof Error ? error.message : 'Unknown error' });
     }
   };
 
   const testChat = async () => {
     try {
-      const response = await fetch('http://localhost:8787/api/chat', {
+      const response = await fetch('https://cf-agents-api.shivanivinodkumar-jariwala.workers.dev/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,8 +39,8 @@ export function DebugInfo() {
       });
       const data = await response.json();
       setLastTest(data);
-    } catch (error) {
-      setLastTest({ error: error.message });
+    } catch (error: unknown) {
+      setLastTest({ error: error instanceof Error ? error.message : 'Unknown error' });
     }
   };
 

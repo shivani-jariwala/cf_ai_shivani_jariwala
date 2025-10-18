@@ -1,4 +1,4 @@
-import React from 'react';
+// Sidebar component
 import { Plus, MessageSquare, Settings } from 'lucide-react';
 // Local types to avoid workspace issues
 interface ChatSession {

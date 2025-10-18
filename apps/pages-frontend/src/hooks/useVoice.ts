@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8787';
+const API_BASE_URL = 'https://cf-agents-api.shivanivinodkumar-jariwala.workers.dev';
 
 export function useVoice() {
   const [isRecording, setIsRecording] = useState(false);

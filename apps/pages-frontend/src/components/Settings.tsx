@@ -1,4 +1,4 @@
-import React from 'react';
+// Settings component
 import { Settings as SettingsIcon } from 'lucide-react';
 
 interface SettingsProps {
@@ -7,7 +7,11 @@ interface SettingsProps {
     memory: boolean;
     voice: boolean;
   };
-  onSettingsChange: (settings: typeof settings) => void;
+  onSettingsChange: (settings: {
+    model: string;
+    memory: boolean;
+    voice: boolean;
+  }) => void;
 }
 
 export function Settings({ settings, onSettingsChange }: SettingsProps) {

@@ -134,5 +134,7 @@ test-*.ts
 *test*.ts
 
 # Documentation that might contain secrets
-CLEANUP_SUMMARY.mdnode_modules/
+CLEANUP_SUMMARY.md
+
+# Additional build outputs
 packages/shared/dist/

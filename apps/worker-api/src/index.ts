@@ -15,7 +15,13 @@ const app = new Hono<{ Bindings: Env }>();
 
 // Middleware
 app.use('*', cors({
-  origin: ['http://localhost:5173', 'https://your-pages-domain.pages.dev'],
+  origin: [
+    'http://localhost:5173', 
+    'https://ad1213b9.cf-agents-demo.pages.dev',
+    'https://404c0042.cf-agents-demo.pages.dev',
+    'https://d7b69180.cf-agents-demo.pages.dev',
+    'https://*.cf-agents-demo.pages.dev'
+  ],
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
 }));
